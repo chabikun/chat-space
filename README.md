@@ -12,6 +12,47 @@
 - belongs_to :group
 - belongs_to :user
 
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|text|null: false|
+|mailaddress|text|null: false|
+|password|text|null:false|
+
+### Association
+- has_many :groups
+- has_many :members
+- has_many :messages
+
+## messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|body|text||
+|image|string||
+|group_id|integer|null:false, foreign_key: true|
+|user_id|integer|null:false, foreign_key: true|
+
+### Association
+- has_many :users
+- has_many :members
+- has_many :groups
+
+## groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|groupname|text|null:false|
+|membaer_id|integer|null:false, foreign_key: true|
+|user_id|integer|null:false, foreign_key: true|
+
+### Association
+- hbelongs_ to :user
+- has_many :members
+- has_many :messages
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
