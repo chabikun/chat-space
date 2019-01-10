@@ -42,7 +42,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|groupname|text|null:false|
+|name|text|null:false|
 
 ### Association
 - has_many :users, through: :members
