@@ -5,9 +5,9 @@
   .side-bar
     .top
       %p chabi
-      %ul{:class => "side-bar-icon"}
-        %i{:class => "far fa-edit edit-icon-color",:onclick => "window.open('#')"}
-        %i{:class => "fas fa-cog cog-icon-color",:onclick => "window.open('#')"}
+      %ul{class: "side-bar-icon"}
+        %i{class: "far fa-edit edit-icon-color",onclick: "window.open('#')"}
+        %i{class: "fas fa-cog cog-icon-color",onclick: "window.open('#')"}
 
     .bottom
       %h3 テスト
@@ -21,7 +21,7 @@
     .edit
       %h3 sampleグループ
       %p Members: chabi 山田太郎 田中花子 鈴木次郎
-      %input{:onclick => "window.open('#')", :type => "button", :value => "Edit", :name => "button",:class => "chat-main-edit__button"}
+      %input{onclick: "window.open('#')", type: "button", value: "Edit", name: "button", class: "chat-main-edit__button"}
 
     .message
       %h3 chabi
@@ -32,7 +32,7 @@
       %p ccc
 
     .send
-      %input{:type => "text", :class => "message", :placeholder => "type a message"}
-      %input{:type => "submit", :class => "button", :value => "Send"}
-      %ul{:class => "photo-icon"}
-        %i{:class => "far fa-image"}
+      %input{type: "text", class: "message", placeholder: "type a message"}
+      %input{type: "submit", class: "button", value: "Send"}
+      %ul{class: "photo-icon"}
+        %i{class: "far fa-image"}
