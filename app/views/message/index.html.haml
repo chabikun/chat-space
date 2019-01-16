@@ -6,7 +6,8 @@
     .top
       %p chabi
       %ul{class: "side-bar-icon"}
-        %i{class: "far fa-edit edit-icon-color",onclick: "window.open('#')"}
+        = link_to new_group_path do
+          %i{class: "far fa-edit edit-icon-color"}
         %i{class: "fas fa-cog cog-icon-color",onclick: "window.open('#')"}
 
     .bottom
