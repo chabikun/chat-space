@@ -4,11 +4,13 @@
 .wrapper
   .side-bar
     .top
-      %p chabi
+      %p.top__name
+        = current_user.name
       %ul{class: "side-bar-icon"}
         = link_to new_group_path do
           %i{class: "far fa-edit edit-icon-color"}
-        %i{class: "fas fa-cog cog-icon-color",onclick: "window.open('#')"}
+        = link_to edit_user_path(current_user) do
+          %i{class: "fas fa-cog cog-icon-color"}
 
     .bottom
       - current_user.groups.each do |group|
