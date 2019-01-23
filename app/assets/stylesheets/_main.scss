@@ -95,7 +95,7 @@
          height: 40px;
        }
    }
-   .message {
+   .messages {
      height: 485px;
      width: 100%;
      background-color: #F7F9FC;
@@ -112,6 +112,21 @@
        padding-top: 10px;
        padding-left: 40px;
      }
+
+     .upper-message__user-name {
+       font-size: 16px;
+       font-weight: bold;
+       color: #434A54;
+       padding-top: 46px;
+       padding-left: 40px;
+     }
+     .upper-message__date {
+       font-size: 10px;
+       padding-left: 100px;
+       top: -18px;
+       position: relative;
+
+      }
    }
    .send {
     height: 90px;
