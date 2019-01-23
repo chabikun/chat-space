@@ -17,15 +17,7 @@
           .group__name
             = group.name
           .group__message
-            メッセージはまだありません。
-
-
-      / %h3 テスト
-      / %p bbb
-      / %h3 テスト2
-      / %p まだメッセージはありません
-      / %h3 テスト3
-      / %p まだメッセージはありません
+            = group.show_last_message
 
   .chat-main
     .edit
@@ -35,10 +27,6 @@
 
     .messages
       = render @messages
-      %h3 chabi
-      %p bbb
-      %h3 chabi
-      %p ccc
 
     .send
       = form_for [@group, @message] do |f|
