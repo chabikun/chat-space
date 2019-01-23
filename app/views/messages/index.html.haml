@@ -33,9 +33,8 @@
       %p Members: chabi 山田太郎 田中花子 鈴木次郎
       %input{onclick: "window.open('#')", type: "button", value: "Edit", name: "button", class: "chat-main-edit__button"}
 
-    .message
-      %h3 chabi
-      %p aaa
+    .messages
+      = render @messages
       %h3 chabi
       %p bbb
       %h3 chabi
