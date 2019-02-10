@@ -20,24 +20,24 @@ $(function(){
                        </div>
                    </div>`;
 
-    var html_nil = `<div class="message">
-                       <div class="upper-message">
-                           <div class="upper-message__user-name">
-                               ${ comment.user_name }
-                           </div>
-                           <div class="upper-message__date">
-                               ${ comment.time }
-                           </div>
-                       </div>
-                       <div class="lower-message">
-                           <p class="lower-message__content">
-                               ${ comment.content }
-                           </p>
-                       </div>
-                   </div>`;
     if (comment.image.url == null){
+        var html_nil = `<div class="message">
+                           <div class="upper-message">
+                               <div class="upper-message__user-name">
+                                   ${ comment.user_name }
+                               </div>
+                               <div class="upper-message__date">
+                                   ${ comment.time }
+                               </div>
+                           </div>
+                           <div class="lower-message">
+                               <p class="lower-message__content">
+                                   ${ comment.content }
+                               </p>
+                           </div>
+                       </div>`;
       return html_nil
-    }
+        }
     else{
       return html_being
     }
@@ -59,8 +59,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html)
-      $('.message').val('')
-      $('#message_image').val('')
+      $('#new_message')[0].reset()
       $(".messages").scrollTop( $('.messages')[0].scrollHeight );
     })
     .fail(function(){
