@@ -1,6 +1,26 @@
 $(function(){
   function buildHTML(comment){
-    var html = `<div class="message">
+
+    var html_being = `<div class="message">
+                       <div class="upper-message">
+                           <div class="upper-message__user-name">
+                               ${ comment.user_name }
+                           </div>
+                           <div class="upper-message__date">
+                               ${ comment.time }
+                           </div>
+                       </div>
+                       <div class="lower-message">
+                           <p class="lower-message__content">
+                               ${ comment.content }
+                           </p>
+                           <div class="lower-message__imege">
+                               <img src= "${ comment.image.url }">
+                           </div>
+                       </div>
+                   </div>`;
+
+    var html_nil = `<div class="message">
                        <div class="upper-message">
                            <div class="upper-message__user-name">
                                ${ comment.user_name }
@@ -15,8 +35,14 @@ $(function(){
                            </p>
                        </div>
                    </div>`;
-    return html;
-  }
+    if (comment.image.url == null){
+      return html_nil
+    }
+    else{
+      return html_being
+    }
+  };
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -33,7 +59,8 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html)
-      $('.lower-message__content').val('')
+      $('.message').val('')
+      $('#message_image').val('')
       $(".messages").scrollTop( $('.messages')[0].scrollHeight );
     })
     .fail(function(){
