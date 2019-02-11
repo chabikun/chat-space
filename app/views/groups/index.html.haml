@@ -1,0 +1,41 @@
+/ .wrapper
+
+/   = render 'shared/side-bar'
+
+/ %p hello world
+.wrapper
+  .side-bar
+    .top
+      %p.top__name
+        = current_user.name
+      %ul{class: "side-bar-icon"}
+        = link_to new_group_path do
+          %i{class: "far fa-edit edit-icon-color"}
+        = link_to edit_user_path(current_user) do
+          %i{class: "fas fa-cog cog-icon-color"}
+
+    .bottom
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            = group.show_last_message
+
+  .chat-main
+    .edit
+      / %h3 sampleグループ
+      / %p Members: chabi 山田太郎 田中花子 鈴木次郎
+      / %input{onclick: "window.open('#')", type: "button", value: "Edit", name: "button", class: "chat-main-edit__button"}
+
+    / .messages
+    /   = render partial: 'messages/message', collection: @messages
+
+    / .send
+    /   = form_for [@group, @message] do |f|
+    /     = f.text_field :content, class: 'message', placeholder: 'type a message'
+    /     .form__mask
+    /       = f.label :image, class: 'photo-icon' do
+    /         = fa_icon 'image'
+    /         = f.file_field :image, class: 'hidden'
+    /     = f.submit 'Send', class: 'button'
