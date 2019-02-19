@@ -5,6 +5,10 @@
       %p.top__name
         = current_user.name
       %ul{class: "side-bar-icon"}
+        = link_to new_group_path do
+          %i{class: "far fa-edit edit-icon-color"}
+        = link_to edit_user_path(current_user) do
+          %i{class: "fas fa-cog cog-icon-color"}
 
     .bottom
       - current_user.groups.each do |group|
@@ -16,9 +20,13 @@
 
   .chat-main
     .edit
-      %h3 sampleグループ
-      %p Members: chabi 山田太郎 田中花子 鈴木次郎
-      %input{onclick: "window.open('#')", type: "button", value: "Edit", name: "button", class: "chat-main-edit__button"}
+      %h3= @group.name
+      %p members:
+      - @group.users.each do |user|
+        %li= user.name
+        = link_to  'Edit', edit_group_path(@group), class: 'chat-main-edit__button'
+
+
 
     .messages
       = render @messages
@@ -30,7 +38,7 @@
           = f.label :image, class: 'photo-icon' do
             = fa_icon 'image'
             = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'button',id: 'send_botton'
+        = f.submit 'Send', class: 'button',id:'send_botton'
 
 
 
