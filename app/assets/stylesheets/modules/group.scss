@@ -77,20 +77,23 @@
     }
 
   }
+  .chat-group-form-add{
+    &__label{
+      float: left;
+      font-weight: bold;
+      padding-left: 70px;
+      padding-top: 15px;
 
-  .chat-group-form-add__label{
-    float: left;
-    font-weight: bold;
-    padding-left: 70px;
-    padding-top: 15px;
+    }
 
-  }
+    &__input{
+      width: 70%;
+      line-height: 50px;
+      float: right;
+      box-sizing: border-box;
+    }
 
-  .chat-group-form-add__input{
-    width: 70%;
-    line-height: 50px;
-    float: right;
-    box-sizing: border-box;
+
   }
 
   #user-search-result{
@@ -98,24 +101,27 @@
     float: right;
   }
 
-    .chat-group-user-add-candidacy {
+  .chat-group-user-add{
+    &-candidacy {
       width: 100%;
       line-height: 50px;
       box-sizing: border-box;
     }
-      .chat-group-user-add-candidacy__label {
-        float: left;
-        font-weight: bold;
-        padding-left: 115px;
-        padding-top: 15px;
-      }
+    &-candidacy__label {
+      float: left;
+      font-weight: bold;
+      padding-left: 115px;
+      padding-top: 15px;
+    }
 
-      #chat-group-user {
-        width: 70%;
-        line-height: 50px;
-        float: right;
-        box-sizing: border-box;
-      }
+  }
+
+  #chat-group-user {
+    width: 70%;
+    line-height: 50px;
+    float: right;
+    box-sizing: border-box;
+  }
 
 
   .chat-group-user {
