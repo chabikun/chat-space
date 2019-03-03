@@ -49,11 +49,9 @@ $(function(){
   function update(){
     if($('.message-id')[0]){
       var message_id = $(".message-id:last").data("id");
-      console.log(message_id)
     }
     else {
       var message_id = 0
-      console.log(message_id)
     }
     $.ajax({
       url: location.href,
@@ -65,7 +63,6 @@ $(function(){
     })
 
     .done(function(data){
-      console.log(data)
       $.each(data,function(i,messages){
         var html = buildHTML(messages);
         $('.messages').append(html);
