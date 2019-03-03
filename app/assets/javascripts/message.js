@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(comment){
 
-    var html_being = `<div class="message">
+    var html_being = `<div class="message message-id" data-id=${ comment.message_id }>
                        <div class="upper-message">
                            <div class="upper-message__user-name">
                                ${ comment.user_name }
@@ -21,7 +21,7 @@ $(function(){
                    </div>`;
 
     if (comment.image.url == null){
-        var html_nil = `<div class="message">
+        var html_nil = `<div class="message message-id" data-id= ${ comment.message_id }>
                            <div class="upper-message">
                                <div class="upper-message__user-name">
                                    ${ comment.user_name }
@@ -37,11 +37,11 @@ $(function(){
                            </div>
                        </div>`;
       return html_nil
-        }
-    else{
+      } else{
       return html_being
-    }
-  };
+      }
+    };
+
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
@@ -65,6 +65,6 @@ $(function(){
     .fail(function(){
       alert('メッセージを入力してください。');
     })
-    $("#send_botton").removeAttr('data-disable-with')
+    $("#send_botton").removeAttr('data-disable-with');
   })
 });
