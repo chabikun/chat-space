@@ -31,7 +31,6 @@
     .messages
       = render @messages
 
-
     .send
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'message', placeholder: 'type a message'

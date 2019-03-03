@@ -21,22 +21,10 @@ $(function(){
                    </div>`;
 
     if (messages.image.url == null){
-        var html_nil = `<div class="message message-id" data-id= ${ messages.message_id }>
-                           <div class="upper-message">
-                               <div class="upper-message__user-name">
-                                   ${ messages.user_name }
-                               </div>
-                               <div class="upper-message__date">
-                                   ${ messages.time }
-                               </div>
-                           </div>
-                           <div class="lower-message">
-                               <p class="lower-message__content">
-                                   ${ messages.content }
-                               </p>
-                           </div>
-                       </div>`;
-      return html_nil
+        var html_nil = `<div class="lower-message__imege">
+                               <img src= "${ messages.image.url }">
+                           </div>`;
+      return (html_being,html_nil)
         }
     else{
       return html_being
