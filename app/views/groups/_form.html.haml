@@ -25,6 +25,7 @@
 
   .chat-group-user-add
     .chat-group-user-add-candidacy
+    %input{type:'hidden',name: 'group[user_ids][]', value: "#{current_user.id}"}
       = f.label :チャットメンバー, class: 'chat-group-user-add-candidacy__label'
     .chat-group-form__field.clearfix
 
